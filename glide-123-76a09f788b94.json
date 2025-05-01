@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "glide-123",
+  "private_key_id": "76a09f788b9450363da9f061cc3761afbdbd470e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDRG2vwhDGE9OIe\n6+froTNaizSWNSnvVPUHF+x/0FlICyc+0U4/qDnw0vEbq9NQ4sq20lhR65Y2hfJ6\n3K/lExLSMThRvdHfTZViIDu/u4hYqV+DB44Bi9uv3057PbkcxxEmET2JBKCGaT+H\nBiJNcRLA8eHW8Q+nJgykUoANkbVR3VVIMbeBMnZj0zs3jlmre0hkIrYEbvuwojdr\naCEJ7hNjKjLkzHfPRsHFy13k7GQMe4EaZJJ3Hqv+4ViSFKanmd4p1e96r2+v+GPP\nBj00xgV4MnSLdCg6vWix9Ep/rU+KGSv52WEi/ylem8SrGxWekBLRckDRJ3YpSTs7\nJ26xT851AgMBAAECggEAH4IFQql4mLMZe1VKjdutVEBTfSqnlfN0NExri1rGiS99\nC18YbkkX6eyu/d9nKPHzX5bUTgu0h6SpQ9ALBPZZyKg390El5YLYNn/q4NoOEmX7\nCVBTGnKLeLWqKrHDOc3ZDKZeYk37LiWft+W5t3eJPt9ziyKpnCMElqIDv4esDZiJ\nZinNMpRslq+bnKcIegkJwMLWJw4RN74RWJEa7qwNF0Ga7jBvtNn9Ou7vKaRxB4Uj\nz7s+mhXID/p7vvLLbJLO3H1VEsf8JL/nu0x5zy9OyzZY4GwSrJtT8Odvqlmt1/ks\n0e+NIbq80g4OtWSK8W5l9c+un91lCg6MCsKF+9mSwQKBgQDuhB/2+aJii+P29P/w\n8M8MoGKqcVWgLToPytmCrGFBxjqP+asuxlqt4vcm6m+rEvasJ5AzydJ6pTOOD8XG\nJJb4tcUD1g69Zz5vHUZq3NzBM5BSfi1mT3BJ+kMyApyGvcTypwFVcIN4twLC5eKy\nidkElxYQwu6INAWkDwJ4Lr/2JQKBgQDgb2wP5itiVrK57Cke2AgJN8v/mbrbdBQO\nDLNXDdwnDPzaUtEUOFhcPflB+zKJU8gzKO5+HUDwGw7iPodUdeNB9/Zv+39pccNN\nTCXHNHGt+Q+iRzfL/Gk7vxilwRTS0FjEF5kManGQv1+KF+KzCAeDgMDQRyaudVbt\nY0vNxg2+EQKBgHz5R9JdnMMr70d/ufdiBerkwq3x8l6aM/kAXZXFgrQ3DIpR1GsO\nzYadDMkcP2SQ7CTqGfm4vws6Mlg2VXdrxpsMiu1mpJSDW0hXO4VUsmqc/PrsWBdq\nejiY48p5adCD8IUAEofVC14d7ll2oKDR758jFxGzQc6mC2qZ3r5gKH7tAoGAcik7\nFntF5iejkd8Gq6HHtKilI8bWvXo2GU9sigOK0HJSy9sEbvyaNZFwkJduBVyQoTVY\n2t2WgovA7mRQAi5VAuFWgW+0R7aOWWs6bDHJAW2G/kyrnR8viCyUJPwp03IXNOer\n+hzK144A0wWDUv3qlIGRkmAe1O7q4KV5kZoEs4ECgYEA1SKitEyxMGzddCxJmALs\nVSESoBkKHhdnqYmoqdY3vjFW688n9CyKYGsXNyCStnKGI3D8+D+Z9mUN0kuX/7p1\njR+dpIatYli6kNRWhT8QBGsHWxe1M9Wm44NvcIPxZcOxzrFRnZHHny14IUKqdw0v\nZpbdCx/518Klnn3wudLuCu4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mytopic@glide-123.iam.gserviceaccount.com",
+  "client_id": "108623321905441477022",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mytopic%40glide-123.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
