@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Input Page</title>
+    <style>
+        /* Full-page background with transparency */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../static/assets/img/Text.png') no-repeat center center/cover;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .form-wrapper {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 2em;
+            color: #ffcc00;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Input styling */
+        input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        /* Submit button styling */
+        button[type="submit"] {
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #e6b800;
+        }
+
+        /* Info container styling */
+        .info-container {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            max-width: 900px;
+            text-align: left;
+        }
+
+        .info-container h3 {
+            margin-top: 0;
+            color: #ffcc00;
+        }
+
+        .info-container p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get Information About a Location</h1>
+    <div class="form-wrapper">
+        <form action="/process_text" method="post" id="locationForm">
+            <input type="text" name="location" placeholder="Enter location name" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <!-- Container for displaying the response -->
+    <div id="response" class="info-container" style="display: none;"></div>
+
+    <script>
+        document.getElementById('locationForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const location = document.querySelector('input[name="location"]').value;
+
+            const response = await fetch('/process_text', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `location=${encodeURIComponent(location)}`,
+            });
+
+            const data = await response.json();
+            const responseDiv = document.getElementById('response');
+
+            if (response.ok) {
+                // Display the location information in the styled container
+                const info = data.message;
+                responseDiv.style.display = "block"; // Make the container visible
+                responseDiv.innerHTML = `
+                    <h3>Location Information</h3>
+                    <p><strong>Name:</strong> ${info.display_name}</p>
+                    <p><strong>Latitude:</strong> ${info.latitude}</p>
+                    <p><strong>Longitude:</strong> ${info.longitude}</p>
+                    <p><strong>Description:</strong> ${info.description}</p>
+                `;
+            } else {
+                responseDiv.style.display = "block"; // Show error message in the container
+                responseDiv.innerHTML = `<p>Error: ${data.error || data.message}</p>`;
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Locations</title>
+    <style>
+        /* General styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../static/assets/img/location.png') no-repeat center center/cover;
+            background-attachment: fixed; /* Makes the background image fixed */
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Styling for the header */
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        /* Styling for the form container */
+        form {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+        }
+
+        /* Styling for labels and inputs */
+        label, input[type="submit"] {
+            font-size: 1em;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffa500;
+        }
+
+        /* Styling for nearby places section */
+        h2 {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #ffcc00;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        ul li {
+            background: rgba(0, 0, 0, 0.8); /* Set background to black with slight transparency */
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: left;
+            color: #fff;
+        }
+
+        ul li strong {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Nearby Locations</h1>
+    <form method="POST" action="/location">
+        <label for="latitude">Latitude:</label>
+        <input type="text" name="latitude" required>
+
+        <label for="longitude">Longitude:</label>
+        <input type="text" name="longitude" required>
+
+        <label for="radius">Radius (meters):</label>
+        <input type="number" name="radius" required>
+
+        <input type="submit" value="Find Nearby Places">
+    </form>
+
+    <h2>Nearby Places:</h2>
+    <ul>
+        {% for place in nearby_places %}
+            <li>
+                <strong>Name:</strong> {{ place['display_name'] }} <br>
+                <strong>Type:</strong> {{ place['type'] }} <br>
+                <strong>Latitude:</strong> {{ place['lat'] }} <br>
+                <strong>Longitude:</strong> {{ place['lon'] }} <br>
+            </li>
+        {% else %}
+            <li>No nearby places found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
